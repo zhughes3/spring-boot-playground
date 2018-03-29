@@ -4,11 +4,11 @@
 
 ### SpringBootPlayground
 
-#### SpringBootPlaygroundApplication
+	1. SpringBootPlaygroundApplication
 
 Main class for creating the Spring Boot Application.
 
-#### CSVReader
+	2. CSVReader
 
 Basic wrapper class for working with the database of Airports from https://openflights.org/data.html
 
@@ -16,21 +16,21 @@ The records are stored locally in a CSV file.
 
 ### Resources
 
-#### Airport
+	1. Airport
 
 Class that contains resource-level data for an airport. Currently maintains information about name, city and state.
 
-#### Distance
+	2. Distance
 
 Class that contains resource-level data for distances between two airports.
 
 ### Controllers
 
-#### AirportController
+	1. AirportController
 
 Spring REST Controller class that handles routing for /airports path.
 
-#### DistanceController
+	2. DistanceController
 
 Spring REST Controller class that handles routing for /distances path.
 
