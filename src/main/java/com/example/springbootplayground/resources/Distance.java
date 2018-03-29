@@ -1,4 +1,4 @@
-package com.example.springbootplayground;
+package com.example.springbootplayground.resources;
 
 public class Distance {
 	double distance;
@@ -11,7 +11,8 @@ public class Distance {
 		return this.distance;
 	}
 	
-	// found https://stackoverflow.com/questions/3694380/calculating-distance-between-two-points-using-latitude-longitude-what-am-i-doi
+	// https://stackoverflow.com/questions/3694380/calculating-distance-between-two-points-using-latitude-longitude-what-am-i-doi
+	// calculate distance between two lat/long coordinates
 	private void setDistance(double lat1, double lat2, double lon1,
 	        double lon2, double el1, double el2) {
 
