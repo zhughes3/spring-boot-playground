@@ -1,13 +1,25 @@
 package com.example.springbootplayground.resources;
 
 import com.example.springbootplayground.CSVReader;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Airport {
-	private final String name;
-	private final String city;
-	private final String country;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
+	private String name;
+	private String city;
+	private String country;
+	private String iata;
+	
+	protected Airport() { } 
 	
 	public Airport(CSVReader reader, String iata) {
+		this.iata = iata;
 		String[] airport_info = reader.getAirportInfo(iata);
 		//return new Airport();
 		if (airport_info.length != 3) {
@@ -20,6 +32,13 @@ public class Airport {
 		}
 	}
 	
+	public Airport(String iata, String name, String city, String country) {
+		this.iata = iata;
+		this.name = name;
+		this.city = city;
+		this.country = country;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -30,6 +49,10 @@ public class Airport {
 	
 	public String getCountry() {
 		return country;
+	}
+	
+	public Long getId() {
+		return id;
 	}
 	
 	public String toString() {

@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CSVReader {
 	BufferedReader reader;
@@ -14,6 +16,20 @@ public class CSVReader {
 		} catch (FileNotFoundException e) {
 			System.out.println("File " + filename + " could not be found.");
 		}
+	}
+	
+	public List<String[]> getAllRecords() {
+		List<String[]> records = new ArrayList<>();
+		String line = null;
+		try {
+			while ((line = reader.readLine()) != null) {
+				String[] fields = cleanLine(line.split(","));
+				records.add(fields);
+			}
+		} catch (IOException e) {
+			System.out.println("Encountered an IOException while trying to get all records.");
+		} 
+		return records;
 	}
 	
 	// return name, city, country
