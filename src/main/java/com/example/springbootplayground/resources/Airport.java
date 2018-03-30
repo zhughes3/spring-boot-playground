@@ -1,6 +1,5 @@
 package com.example.springbootplayground.resources;
 
-import com.example.springbootplayground.CSVReader;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,21 +18,6 @@ public class Airport {
 	private double longitude;
 	
 	protected Airport() { } 
-	
-	public Airport(CSVReader reader, String iata) {
-		this.iata = iata;
-		String[] airport_info = reader.getAirportInfo(iata);
-		
-		//return new Airport();
-		if (airport_info.length != 3) {
-			System.out.println("Error constructing an Airport object");
-			this.name = null; this.city = null; this.country = null;
-		} else {
-			this.name = airport_info[0];
-			this.city = airport_info[1];
-			this.country = airport_info[2];
-		}
-	}
 	
 	public Airport(String iata, String name, String city, String country, double lat, double lng) {
 		this.iata = iata;
