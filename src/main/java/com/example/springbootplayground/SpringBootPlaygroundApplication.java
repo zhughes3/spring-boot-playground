@@ -26,13 +26,19 @@ public class SpringBootPlaygroundApplication {
 		SpringApplication.run(SpringBootPlaygroundApplication.class, args);
 	}
 	
+	//populate H2 database with Airport resources
 	@Bean
 	public CommandLineRunner populate(AirportRepository repository) {
 		return (args) -> {
 			List<String[]> airports = reader.getAllRecords();
+			String regex = "^[0-9.]*$";
 			
 			for (String[] airport : airports) {
-				repository.save(new Airport(airport[4], airport[1], airport[2], airport[3]));
+				if (airport[6].matches(regex) && airport[7].matches(regex)) {
+					double lat = Double.parseDouble(airport[6]);
+					double lng = Double.parseDouble(airport[7]);
+					repository.save(new Airport(airport[4], airport[1], airport[2], airport[3], lat, lng));
+				}
 			}
 			
 			log.info("Customers found with findAll():");
@@ -40,16 +46,6 @@ public class SpringBootPlaygroundApplication {
 			for (Airport a : repository.findAll()) {
 				log.info(a.toString());
 			}
-			
 		};
 	}
-	
-	@RequestMapping("/")
-	@ResponseBody
-	String home() {
-		//turn this into a service discovery endpoint
-		return "Hello World!";
-	}
-
-	
 }
