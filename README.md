@@ -22,9 +22,15 @@
 ### Controllers
 
 <dl>
-	<dt>AirportController</dt>
-	<dd>Spring REST Controller class that handles routing for /airports path.</dd>
 	<dt>DistanceController</dt>
 	<dd>Spring REST Controller class that handles routing for /distances path.</dd>
+</dl>
+
+### Persistence
+
+<dl>
+	<dt>AirportRepository</dt>
+	<dd>Spring Repository interface that wires REST endpoints to the '/airports' path. Allows you to search Airports by IATA code.</dd>
+
 </dl>
 
