@@ -7,6 +7,10 @@ public class Distance {
 		setDistance(srcCoords[0], srcCoords[1], destCoords[0], destCoords[1], 0, 0);
 	}
 	
+	public Distance(double srcLat, double srcLong, double destLat, double destLong) {
+		setDistance(srcLat, srcLong, destLat, destLong, 0, 0);
+	}
+	
 	public double getDistance() {
 		return this.distance;
 	}
