@@ -15,12 +15,17 @@ import com.example.springbootplayground.persistence.AirportRepository;
 import com.example.springbootplayground.resources.Airport;
 import com.opencsv.CSVReader;
 
-
+/**
+ * The SpringBootPlaygroundApplication is a small RESTful API that gives end-users the ability to get airport information
+ * based upon the airport's IATA code and to calculate the distance between two airport's using their IATA codes.
+ * @author zhughes
+ * @version 0.0.1
+ *
+ */
 @SpringBootApplication
 public class SpringBootPlaygroundApplication {
 	
 	private static final Logger log = LoggerFactory.getLogger(SpringBootPlaygroundApplication.class);
-	//private CSVReaderZ reader = new CSVReaderZ("airports.dat.txt");
 	private static CSVReader reader;
 	private static String filename = "airports.dat.txt";
 	
@@ -35,7 +40,11 @@ public class SpringBootPlaygroundApplication {
 		SpringApplication.run(SpringBootPlaygroundApplication.class, args);
 	}
 	
-	//populate H2 database with Airport resources
+	/**
+	 * populate method populate's an in-memory H2 database with airline information from openflights.org
+	 * @param repository
+	 * @return
+	 */
 	@Bean
 	public CommandLineRunner populate(AirportRepository repository) {
 		return (args) -> {

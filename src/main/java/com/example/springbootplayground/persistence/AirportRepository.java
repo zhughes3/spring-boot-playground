@@ -6,9 +6,13 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.example.springbootplayground.resources.Airport;
 
+/**
+ * AirportRepository is an interface that helps Spring Boot build an implementation that allows for CRUD functionality for all of the
+ * Airports in the database.
+ * @author zhughes
+ *
+ */
 @RepositoryRestResource(collectionResourceRel = "airports", path = "airports")
 public interface AirportRepository extends PagingAndSortingRepository<Airport, Long> {
-	
 	Airport findByIata(@Param("iata") String iata);
-	
 }

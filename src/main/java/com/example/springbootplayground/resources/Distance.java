@@ -1,5 +1,10 @@
 package com.example.springbootplayground.resources;
 
+/**
+ * Distance class maintains distance information between two airports.
+ * @author zhughes
+ *
+ */
 public class Distance {
 	double distance;
 	
@@ -15,6 +20,17 @@ public class Distance {
 		return this.distance;
 	}
 	
+	/**
+	 * setDistance uses the radius of the earth, elevation information and lat/long coordinates of two locations to calculate the distance between
+	 * the two locations.
+	 * 
+	 * @param lat1
+	 * @param lat2
+	 * @param lon1
+	 * @param lon2
+	 * @param el1
+	 * @param el2
+	 */
 	// https://stackoverflow.com/questions/3694380/calculating-distance-between-two-points-using-latitude-longitude-what-am-i-doi
 	// calculate distance between two lat/long coordinates
 	private void setDistance(double lat1, double lat2, double lon1,

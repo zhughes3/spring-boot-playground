@@ -5,6 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * Airport class maintains information about all of the Airports in the database.
+ * @author zhughes
+ *
+ */
 @Entity
 public class Airport {
 	@Id

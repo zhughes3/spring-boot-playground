@@ -10,12 +10,25 @@ import com.example.springbootplayground.persistence.AirportRepository;
 import com.example.springbootplayground.resources.Airport;
 import com.example.springbootplayground.resources.Distance;
 
+/**
+ * The DistanceController routes HTTP methods to the /distances endpoint. With this endpoint, an end-user can quickly
+ * calculate the distance between two airports using their respective IATA codes.
+ * @author zhughes
+ *
+ */
 @RestController
 public class DistanceController {
 	
 	@Autowired
 	private AirportRepository repository;
 	
+	
+	/**
+	 * getDistance calculates the distance between two airports based upon their lat/long coordinates.
+	 * @param source Source airport's IATA code.
+	 * @param destination Destination airport's IATA code.
+	 * @return
+	 */
 	@RequestMapping("/distances")
 	@ResponseBody
 	public Distance getDistance(

@@ -7,8 +7,6 @@
 <dl>
 	<dt>SpringBootPlaygroundApplication</dt>
 	<dd>Main class for creating the Spring Boot Application.</dd>
-	<dt>CSVReader</dt>
-	<dd>Basic wrapper class for working with the database of Airports from https://openflights.org/data.html. The records are stored locally in a CSV file.</dd>
 </dl>
 
 ### Resources
@@ -31,6 +29,5 @@
 <dl>
 	<dt>AirportRepository</dt>
 	<dd>Spring Repository interface that wires REST endpoints to the '/airports' path. Allows you to search Airports by IATA code.</dd>
-
 </dl>
 
