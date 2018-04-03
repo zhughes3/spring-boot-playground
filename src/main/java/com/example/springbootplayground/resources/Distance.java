@@ -37,8 +37,6 @@ public class Distance {
 	 * @param lat2
 	 * @param lon1
 	 * @param lon2
-	 * @param el1
-	 * @param el2
 	 */
 	// calculate distance between two lat/long coordinates
 	private void setDistance(double srcLat, double srcLong, double destLat, double destLong) {
@@ -62,6 +60,7 @@ public class Distance {
 			return RADIUS_OF_EARTH * c;
 		}
 		
+		//error
 		return 0.0;
 	}
 

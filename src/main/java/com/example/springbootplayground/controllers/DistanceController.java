@@ -1,14 +1,13 @@
 package com.example.springbootplayground.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.springbootplayground.persistence.AirportRepository;
-import com.example.springbootplayground.resources.Airport;
 import com.example.springbootplayground.resources.Distance;
+import com.example.springbootplayground.services.DistanceService;
 
 /**
  * The DistanceController routes HTTP methods to the /distances endpoint. With this endpoint, an end-user can quickly
@@ -18,10 +17,8 @@ import com.example.springbootplayground.resources.Distance;
  */
 @RestController
 public class DistanceController {
-	
 	@Autowired
-	private AirportRepository repository;
-	
+	private DistanceService distanceService;
 	
 	/**
 	 * getDistance calculates the distance between two airports based upon their lat/long coordinates.
@@ -29,13 +26,11 @@ public class DistanceController {
 	 * @param destination Destination airport's IATA code.
 	 * @return
 	 */
-	@RequestMapping("/distances")
+	@GetMapping("/distances")
 	@ResponseBody
 	public Distance getDistance(
 			@RequestParam(value="source") String source,
 			@RequestParam(value="destination") String destination) {
-		Airport sourceAirport = repository.findByIata(source);
-		Airport destAirport = repository.findByIata(destination);
-		return new Distance(sourceAirport.getLatitude(), sourceAirport.getLongitude(), destAirport.getLatitude(), destAirport.getLongitude());
+		return distanceService.getDistance(source, destination);
 	}
 }
