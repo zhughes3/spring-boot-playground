@@ -1,13 +1,10 @@
-package com.example.springbootplayground.controllers;
+package com.example.springbootplayground.distance;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.example.springbootplayground.resources.Distance;
-import com.example.springbootplayground.services.DistanceService;
 
 /**
  * The DistanceController routes HTTP methods to the /distances endpoint. With this endpoint, an end-user can quickly

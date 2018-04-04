@@ -1,4 +1,4 @@
-package com.example.springbootplayground.resources;
+package com.example.springbootplayground.airport;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.example.springbootplayground.resources;
+package com.example.springbootplayground.distance;
 
 /**
  * Distance class maintains distance information between two airports.

@@ -11,8 +11,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.example.springbootplayground.persistence.AirportRepository;
-import com.example.springbootplayground.resources.Airport;
+import com.example.springbootplayground.airport.Airport;
+import com.example.springbootplayground.airport.AirportRepository;
 import com.opencsv.CSVReader;
 
 /**

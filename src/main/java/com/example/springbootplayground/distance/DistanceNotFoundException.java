@@ -1,4 +1,4 @@
-package com.example.springbootplayground.exceptions;
+package com.example.springbootplayground.distance;
 
 public class DistanceNotFoundException extends Exception {
 	

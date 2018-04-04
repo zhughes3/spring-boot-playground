@@ -1,11 +1,10 @@
-package com.example.springbootplayground.services;
+package com.example.springbootplayground.distance;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.springbootplayground.persistence.AirportRepository;
-import com.example.springbootplayground.resources.Airport;
-import com.example.springbootplayground.resources.Distance;
+import com.example.springbootplayground.airport.Airport;
+import com.example.springbootplayground.airport.AirportRepository;
 
 @Service
 public class DistanceService {
